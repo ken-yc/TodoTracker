@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { RightComponent } from './right/right.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,18 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     MainComponent,
     MenuComponent,
     RightComponent,
-    TodoListComponent
+    TodoListComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      { path: 'main', component: MainComponent },
+      { path: 'viewTodos', component: TodoListComponent },
+      { path: '**', redirectTo: 'main' }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
