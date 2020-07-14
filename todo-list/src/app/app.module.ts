@@ -15,6 +15,7 @@ import { TodoService } from './services/todo.service';
 import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { EditComponent } from './edit/edit.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]
