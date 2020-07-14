@@ -1,1 +1,10 @@
-<p>edit works!</p>
+<div>
+    <form [formGroup] = "editForm">
+        <label>Todo title:</label>
+        <input type="text" formControlName="title">
+        <label>Completed: </label>
+        <input type="checkbox" formControlName="completed">
+        <input type="hidden" formControlName="id">
+        <button (click)="editTodo(editForm)">Edit</button>
+    </form>
+</div>
