@@ -19,11 +19,17 @@ export class ViewComponent implements OnInit {
   ) { }
 
   deleteTodo(): void {
-
+    const observable = this.todoService.deleteTodo(this.id);
+    observable.subscribe(data => {
+      this.router.navigate(['/todos']);
+    });
   }
 
   markComplete(): void {
-
+    const observable = this.todoService.completeTodo(this.id);
+    observable.subscribe(data => {
+      this.router.navigate(['/todos']);
+    });
   }
 
   ngOnInit(): void {
