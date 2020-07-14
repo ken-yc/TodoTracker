@@ -1,4 +1,8 @@
-<p>view works!</p>
-<a routerLink="['/todos/edit', todo?.id]"><button class="btn btn-primary mr-1">Edit</button></a>
-<button class="btn btn-primary mr-1">Mark As Complete</button>
-<button class="btn btn-danger">Delete</button>
+<h4>Showing Todo #{{ todo.id }}</h4>
+<h5>Title: {{ todo.title }}</h5>
+<h5>Completed: {{ todo.completed }}</h5>
+<h5>Created On: {{ todo.createdOn | date }}</h5>
+
+<a [routerLink]="['/todos/edit', todo.id]"><button class="btn btn-primary mr-1">Edit</button></a>
+<button class="btn btn-primary mr-1" (click)="markComplete()">Mark As Complete</button>
+<button class="btn btn-danger" (click)="deleteTodo()">Delete</button>
