@@ -1,1 +1,7 @@
-<p>add works!</p>
+<div>
+    <form [formGroup] = "addForm">
+        <label>Todo title:</label>
+        <input type="text" formControlName="title">
+        <button (click)="addTodos(addForm)">Add</button>
+    </form>
+</div>
