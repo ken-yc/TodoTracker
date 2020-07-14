@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -10,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { RightComponent } from './right/right.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoService } from './services/todo.service';
 
 
 @NgModule({
@@ -21,15 +23,14 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     MenuComponent,
     RightComponent,
     TodoListComponent,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
