@@ -20,12 +20,15 @@ export class AddComponent implements OnInit {
   }
 
   addTodos(todoSub: FormGroup): void {
-    const form = JSON.stringify(todoSub.value);
-    this.todoService.postTodos(form).subscribe(
-      rsponse => {
-        //console.log("success");
-        this.router.navigate(['/todos']);
-      }
-    );
+    //console.log('todoSub ' + todoSub.value['title']);
+    if(todoSub.value['title']) {
+      const form = JSON.stringify(todoSub.value);
+      this.todoService.postTodos(form).subscribe(
+        rsponse => {
+          //console.log("success");
+          this.router.navigate(['/todos']);
+        }
+      );
+    }
   }
 }
