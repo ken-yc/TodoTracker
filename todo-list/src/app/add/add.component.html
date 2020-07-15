@@ -1,7 +1,7 @@
 <div>
-    <form [formGroup] = "addForm">
+    <form [formGroup] = "addForm" ngNativeValidate>
         <label>Todo title:</label>
-        <input type="text" formControlName="title">
-        <button (click)="addTodos(addForm)">Add</button>
+        <input type="text" formControlName="title" required>
+        <button (click)="addTodos(addForm)" class="ml-1 btn btn-primary">Add</button>
     </form>
 </div>

@@ -1,10 +1,16 @@
 <div>
-    <form [formGroup] = "editForm">
-        <label>Todo title:</label>
-        <input type="text" formControlName="title">
-        <label>Completed: </label>
-        <input type="checkbox" formControlName="completed">
+    <form [formGroup] = "editForm" ngNativeValidate>
+        <div class="form-group">
+            <label>Todo Title:</label>
+            <input type="text" formControlName="title" class="form-control" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Completed: </label>
+            <input type="checkbox" formControlName="completed" class="ml-1">
+        </div>
         <input type="hidden" formControlName="id">
-        <button (click)="editTodo(editForm)">Edit</button>
+        <br>
+        <button (click)="editTodo(editForm)" class="btn btn-primary">Edit</button>
     </form>
 </div>

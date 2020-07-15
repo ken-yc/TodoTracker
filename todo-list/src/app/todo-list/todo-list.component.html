@@ -1,3 +1,7 @@
+<div>
+    <label style="font-family:Verdana;background-color:#cce6ff">Filter By:</label> 
+    <input type="text" style="height:30px;width:150px;" [(ngModel)] = "listFilter">
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -8,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let todo of todoList">
+        <tr *ngFor="let todo of filteredTodoList">
             <td>{{todo.id}}</td>
             <td><a [routerLink]="['/todos', todo.id]">{{todo.title}}</a></td>
             <td>{{todo.completed}}</td>
