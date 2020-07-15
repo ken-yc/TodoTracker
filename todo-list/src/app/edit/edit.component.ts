@@ -38,13 +38,15 @@ export class EditComponent implements OnInit {
   }
 
   editTodo(todoSub: FormGroup): void {
-    const form = JSON.stringify(todoSub.value);
-    this.todoService.editTodo(form).subscribe(
-      rsponse => {
-        //console.log("success");
-        this.router.navigate(['/todos']);
-      }
-    );
+    if(todoSub.value['title']) {
+      const form = JSON.stringify(todoSub.value);
+      this.todoService.editTodo(form).subscribe(
+        rsponse => {
+          //console.log("success");
+          this.router.navigate(['/todos']);
+        }
+      );
+    }
   }
 
 }

@@ -1,8 +1,8 @@
 <div>
-    <form [formGroup] = "editForm">
+    <form [formGroup] = "editForm" ngNativeValidate>
         <div class="form-group">
             <label>Todo Title:</label>
-            <input type="text" formControlName="title" class="form-control">
+            <input type="text" formControlName="title" class="form-control" required>
         </div>
         <br>
         <div class="form-group">
