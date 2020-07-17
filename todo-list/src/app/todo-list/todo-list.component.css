@@ -1,4 +1,13 @@
 td,
 .table thead th {
-    border-color: #000;
+    border-color: rgb(189, 183, 183);
+}
+
+label{
+    background-color:#cce6ff
+}
+
+input{
+    height:30px;
+    width:150px;
 }

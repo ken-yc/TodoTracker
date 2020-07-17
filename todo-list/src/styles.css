@@ -19,6 +19,11 @@
   text-decoration: none;
 }
 
+body{
+  font-family:Arial;
+  background-color:#fefefe;
+}
+
 .main {
   float: left;
   width: 55%;
@@ -34,6 +39,15 @@
   padding: 15px;
   margin-top: 7px;
   text-align: center;
+}
+
+label{
+  font-size:1.2em;
+  margin-right: 5px;
+}
+
+.btn {
+  font-weight:bold;
 }
 
 @media only screen and (max-width:620px) {
