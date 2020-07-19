@@ -1,23 +1,29 @@
 <div>
-    <label>Filter By</label> 
-    <input type="text" [(ngModel)] = "listFilter">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <label>Find Task</label>
+    </div>
+    <input type="text" [(ngModel)]="listFilter" class="form-control">
+  </div>
 </div>
 <table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Completed</th>
-            <th>Created On</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let todo of filteredTodoList">
-            <td>{{todo.id}}</td>
-            <td><a [routerLink]="['/todos', todo.id]">{{todo.title}}</a></td>
-            <td>{{todo.completed}}</td>
-            <td>{{todo.createdOn | date}}</td>
-        </tr>
-    </tbody>
-
+  <thead class="thead-light">
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Completed</th>
+      <th>Created On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of filteredTodoList" [routerLink]="['/todos', todo.id]">
+      <td>{{todo.id}}</td>
+      <td>{{todo.title}}</td>
+      <td class="pl-4"><i class="fa fa-2x"
+          [ngClass]="{'fa-check-circle':todo.completed, 'fa-circle-thin':!todo.completed}"></i>
+        <!--{{todo.completed}}-->
+      </td>
+      <td>{{todo.createdOn | date}}</td>
+    </tr>
+  </tbody>
 </table>

@@ -1,6 +1,7 @@
-<br>
-<div class="menu">
-  <a routerLink="/main"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a routerLink="/todos"><i class="fa fa-fw fa-eye"></i>View Todos </a>
-  <a routerLink="/todos/add"><i class="fa fa-fw fa-plus"></i>Add Todos</a>
-</div>
+
+    <div class="menu flex-column">
+      <a routerLink="/main" routerLinkActive="active" class="nav-link"><i class="fa fa-fw fa-home"></i>Home</a>
+      <a routerLink="/todos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"><i class="fa fa-fw fa-eye"></i>View To-Dos </a>
+      <a routerLink="/todos/add" routerLinkActive="active" class="nav-link"><i class="fa fa-fw fa-plus"></i>Add To-Dos</a>
+    </div>
+

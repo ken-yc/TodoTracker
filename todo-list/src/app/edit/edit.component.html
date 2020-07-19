@@ -1,13 +1,12 @@
 <div>
     <form [formGroup] = "editForm" ngNativeValidate>
         <div class="form-group">
-            <label>Todo Title</label>
+            <label>To-Do Title</label>
             <input type="text" formControlName="title" class="form-control" required>
         </div>
-        <br>
-        <div class="form-group">
-            <label>Completed</label>
-            <input type="checkbox" formControlName="completed" class="ml-1">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" formControlName="completed" class="custom-control-input" id="completed">
+            <label for="completed" class="custom-control-label">Completed</label>
         </div>
         <input type="hidden" formControlName="id">
         <br>
