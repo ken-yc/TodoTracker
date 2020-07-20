@@ -3,11 +3,25 @@ td,
     border-color: rgb(189, 183, 183);
 }
 
-label{
-    background-color:#cce6ff
+table tbody tr:hover {
+    background-color: rgba(0,0,0,0.1);
+    color: #4d79ff;
+    cursor: pointer;
+}
+
+table tbody tr:focus {
+    outline: none;
 }
 
 input{
     height:30px;
     width:150px;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.fa-circle-thin {
+    color: #aaa;
 }

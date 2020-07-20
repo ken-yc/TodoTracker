@@ -1,0 +1,17 @@
+.custom-control-label {
+    cursor: pointer;
+}
+.custom-control-label::before {
+    background-color: transparent;
+    border: 2px solid #aaa;
+    border-radius: .5rem;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: green;
+    border: none;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+}

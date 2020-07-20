@@ -1,0 +1,38 @@
+/* .menu a {
+  background-color: #ffcc66;
+    padding: 8px;
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+} */
+
+
+
+.menu a {
+  color: #333;
+  font-size: 1.25em;
+}
+
+.menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #007bff;
+}
+
+.menu a.active {
+  /* background-color: #4d79ff; */
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (min-width: 577px) {
+  .menu {
+    /* box-shadow: 6px 0 6px rgba(0,0,0,.1); */
+    float: left;
+    width: 25%;
+    min-height: 175px;
+    border-right: 1px solid #ccc;
+  }
+}
