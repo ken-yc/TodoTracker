@@ -17,7 +17,7 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.get<Todo[]>('http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos', httpHead);
+    return this.http.get<Todo[]>('http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos', httpHead);
   }
 
   getTodo(id: number): Observable<Todo> {
@@ -27,7 +27,7 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.get<Todo>(`http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
+    return this.http.get<Todo>(`http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
   }
 
   postTodos(form): Observable<string> {
@@ -37,7 +37,7 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.post<string>('http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos', form, httpHead);
+    return this.http.post<string>('http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos', form, httpHead);
   }
 
   editTodo(form): Observable<string> {
@@ -47,7 +47,7 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.put<string>('http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos', form, httpHead);
+    return this.http.put<string>('http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos', form, httpHead);
   }
 
   deleteTodo(id: number): Observable<string> {
@@ -57,7 +57,7 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.delete<string>(`http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
+    return this.http.delete<string>(`http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
   }
 
   completeTodo(id: number): Observable<string> {
@@ -67,6 +67,6 @@ export class TodoService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.patch<string>(`http://ec2-user@ec2-54-241-135-19.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
+    return this.http.patch<string>(`http://ec2-user@ec2-54-67-21-87.us-west-1.compute.amazonaws.com:8080/todos/${id}`, httpHead);
   }
 }
