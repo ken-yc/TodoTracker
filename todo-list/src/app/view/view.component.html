@@ -2,9 +2,9 @@
 <hr>
 <h4>Title: {{ todo?.title }}</h4>
 <h5>Completed: <i class="fa"
-    [ngClass]="{'fa-check-circle':todo.completed, 'fa-circle-thin':!todo.completed}"></i><!--{{ todo?.completed }}--></h5>
+    [ngClass]="{'fa-check-circle':todo?.completed, 'fa-circle-thin':!todo?.completed}"></i><!--{{ todo?.completed }}--></h5>
 <h5>Created On: {{ todo?.createdOn | date }}</h5>
 
 <a [routerLink]="['/todos/edit', todo?.id]"><button class="btn btn-primary mr-1">Edit</button></a>
-<button class="btn btn-secondary mr-1" (click)="markComplete()" *ngIf="!todo.completed">Mark As Complete</button>
+<button class="btn btn-secondary mr-1" (click)="markComplete()" *ngIf="!todo?.completed">Mark As Complete</button>
 <button class="btn btn-danger" (click)="deleteTodo()">Delete</button>
