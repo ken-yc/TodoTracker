@@ -17,26 +17,23 @@ export class TodoListComponent implements OnInit {
   attrListFilter = '';
 
   get listFilter() {
-      return this.attrListFilter;
+    return this.attrListFilter;
   }
 
   set listFilter(temp: string) {
-      this.attrListFilter = temp;
-      this.filteredTodoList = this.attrListFilter ?
-          this.performFilter(this.attrListFilter) : this.todoList;
+    this.attrListFilter = temp;
+    this.filteredTodoList = this.attrListFilter ?
+      this.performFilter(this.attrListFilter) : this.todoList;
   }
 
-  performFilter(filterBy: string):Todo[] {
-      filterBy = filterBy.toLocaleLowerCase();
-      return this.todoList.filter(function(todo:Todo) {
-          return (todo.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
-      });
+  performFilter(filterBy: string): Todo[] {
+    const re = RegExp(`^${filterBy.toLowerCase()}.*`);
+    return this.todoList.filter(v => v.title.toLowerCase().match(re));
   }
 
   ngOnInit(): void {
     const observable = this.todoService.getTodos();
     observable.subscribe(data => {
-      //console.log(data);
       this.todoList = data;
       this.filteredTodoList = this.todoList;
     });
